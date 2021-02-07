@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil
+
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: green;
+        }
+        
+        table {
+            border-collapse: collapse;
+            margin: 10px 0px 0 10px;
+            text-align: center;
+        }
+        
+        #myInput {
+            margin: 0 0 0 10px;
+            padding: 10px 0;
+        }
+        
+        table td,
+        th {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="" direction="left" onmouseover="stop()" onmouseout="start()" style="cursor:help;">
+        <h1>Demon</h1>
+    </marquee>
+    <input type="text" onkeyup="search(this.value.toUpperCase())" id="myInput">
+    <a href="google.com">link</a>
+    <table border="1" id="mytable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Vishal</td>
+                <td>12</td>
+                <td>Maths</td>
+            </tr>
+
+            <tr>
+                <td>Demon</td>
+                <td>10</td>
+                <td>Javascript</td>
+            </tr>
+
+            <tr>
+                <td>Shakshi</td>
+                <td>4</td>
+                <td>Quantum Physics</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+        const search = (v) => {
+            let table = document.getElementById('mytable');
+            let table_row = table.getElementsByTagName('tr');
+            for (var i = 1; i < table_row.length; i++) {
+                let field_Value = table_row[i].getElementsByTagName('td')[0]; //this is for field
+                if (field_Value.innerText.toUpperCase().indexOf(v) > -1) {
+                    table_row[i].style.display = "";
+                } else {
+                    table_row[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
